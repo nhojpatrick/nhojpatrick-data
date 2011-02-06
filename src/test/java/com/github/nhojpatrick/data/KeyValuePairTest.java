@@ -18,59 +18,45 @@ import org.testng.annotations.Test;
  */
 public class KeyValuePairTest {
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_FALSE = new KeyValuePair<String, Boolean>(
-            "plasibo", false);
+    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_FALSE = new KeyValuePair<String, Boolean>("plasibo", false);
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_NULL = new KeyValuePair<String, Boolean>(
-            "plasibo", null);
+    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_NULL = new KeyValuePair<String, Boolean>("plasibo", null);
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_TRUE = new KeyValuePair<String, Boolean>(
-            "plasibo", true);
+    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_TRUE = new KeyValuePair<String, Boolean>("plasibo", true);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MAX = new KeyValuePair<String, Integer>(
-            "plasibo", Integer.MAX_VALUE);
+    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MAX = new KeyValuePair<String, Integer>("plasibo",
+            Integer.MAX_VALUE);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MIN = new KeyValuePair<String, Integer>(
-            "plasibo", Integer.MIN_VALUE);
+    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MIN = new KeyValuePair<String, Integer>("plasibo",
+            Integer.MIN_VALUE);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_NULL = new KeyValuePair<String, Integer>(
-            "plasibo", null);
+    private KeyValuePair<String, Integer> STR_INT_PLASIBO_NULL = new KeyValuePair<String, Integer>("plasibo", null);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_ZERO = new KeyValuePair<String, Integer>(
-            "plasibo", 0);
+    private KeyValuePair<String, Integer> STR_INT_PLASIBO_ZERO = new KeyValuePair<String, Integer>("plasibo", 0);
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_EMPTY = new KeyValuePair<String, String>("",
-            "");
+    private KeyValuePair<String, String> STR_STR_EMPTY_EMPTY = new KeyValuePair<String, String>("", "");
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_NULL = new KeyValuePair<String, String>("",
-            null);
+    private KeyValuePair<String, String> STR_STR_EMPTY_NULL = new KeyValuePair<String, String>("", null);
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_PLASIBO = new KeyValuePair<String, String>(
-            "", "plasibo");
+    private KeyValuePair<String, String> STR_STR_EMPTY_PLASIBO = new KeyValuePair<String, String>("", "plasibo");
 
-    private KeyValuePair<String, String> STR_STR_NULL_EMPTY = new KeyValuePair<String, String>(
-            null, "");
+    private KeyValuePair<String, String> STR_STR_NULL_EMPTY = new KeyValuePair<String, String>(null, "");
 
-    private KeyValuePair<String, String> STR_STR_NULL_NULL = new KeyValuePair<String, String>(null,
-            null);
+    private KeyValuePair<String, String> STR_STR_NULL_NULL = new KeyValuePair<String, String>(null, null);
 
-    private KeyValuePair<String, String> STR_STR_NULL_PLASIBO = new KeyValuePair<String, String>(
-            null, "plasibo");
+    private KeyValuePair<String, String> STR_STR_NULL_PLASIBO = new KeyValuePair<String, String>(null, "plasibo");
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_EMPTY = new KeyValuePair<String, String>(
-            "plasibo", "");
+    private KeyValuePair<String, String> STR_STR_PLASIBO_EMPTY = new KeyValuePair<String, String>("plasibo", "");
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_NULL = new KeyValuePair<String, String>(
-            "plasibo", null);
+    private KeyValuePair<String, String> STR_STR_PLASIBO_NULL = new KeyValuePair<String, String>("plasibo", null);
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_PLASIBO = new KeyValuePair<String, String>(
-            "plasibo", "plasibo");
+    private KeyValuePair<String, String> STR_STR_PLASIBO_PLASIBO = new KeyValuePair<String, String>("plasibo",
+            "plasibo");
 
     @Test
     public void keyValuePair_constructor_strBoo_plasiboFALSE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>(
-                "plasibo", Boolean.FALSE);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.FALSE);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -83,8 +69,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strBoo_plasiboNULL() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>(
-                "plasibo", null);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", null);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -97,8 +82,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strBoo_plasiboTRUE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>(
-                "plasibo", Boolean.TRUE);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.TRUE);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -111,8 +95,8 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboMAX() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>(
-                "plasibo", Integer.MAX_VALUE);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
+                Integer.MAX_VALUE);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -125,8 +109,8 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboMIN() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>(
-                "plasibo", Integer.MIN_VALUE);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
+                Integer.MIN_VALUE);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -139,8 +123,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboNULL() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>(
-                "plasibo", null);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", null);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -153,8 +136,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboZero() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>(
-                "plasibo", 0);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", 0);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -193,8 +175,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_emptyPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("",
-                "plasibo");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", "plasibo");
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -220,8 +201,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_NULLNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null,
-                null);
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null, null);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -234,8 +214,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(
-                "plasibo", "");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "");
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -248,8 +227,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(
-                "plasibo", null);
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", null);
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -262,8 +240,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(
-                "plasibo", "plasibo");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "plasibo");
         assertNotNull("KeyValuePair should not be null", keyValuePair);
 
         final String key = keyValuePair.getKey();
@@ -686,8 +663,7 @@ public class KeyValuePairTest {
         keyValuePair.setValue(Integer.MAX_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MAX_VALUE),
-                integer);
+        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MAX_VALUE), integer);
     }
 
     @Test
@@ -699,8 +675,7 @@ public class KeyValuePairTest {
         keyValuePair.setValue(Integer.MIN_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MIN_VALUE),
-                integer);
+        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MIN_VALUE), integer);
     }
 
     @Test
@@ -901,67 +876,67 @@ public class KeyValuePairTest {
         assertEquals("Unexpected KeyValuePair.hashCode()", 1482030406, keyValuePairHashCode);
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strBoo_plasiboFALSE() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strBoo_plasiboNULL() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strBoo_plasiboTRUE() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strInt_plasiboMAX() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strInt_plasiboMIN() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strInt_plasiboNULL() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strInt_plasiboZero() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_emptyEmpty() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_emptyNULL() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_emptyPlasibo() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_NULLEmpty() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_NULLNULL() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_NULLPlasibo() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_plasiboEmpty() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_plasiboNULL() {
     }
 
-    @Test(enabled=false)
+    @Test(enabled = false)
     public void keyValuePair_toString_strStr_plasiboPlasibo() {
     }
 
