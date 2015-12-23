@@ -1,5 +1,18 @@
 /*
- * Copyright (c) 2007 - 2009 Oaki Solutions Ltd. All rights reserved.
+ * Copyright (c) 2015 https://github.com/nhojpatrick
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+ * documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+ * rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+ * Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+ * COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+ * OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 package com.github.nhojpatrick.data;
 
@@ -10,14 +23,14 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * The Key Value Pair, allowing type safe key value pairs.
- * 
- * @author john
+ *
+ * @author nhojpatrick
  * @param <K>
  *            the Key type for this pair, the Key type must implement.
  * @param <V>
  *            the Value type of this pair.
  */
-public class KeyValuePair<K extends CharSequence, V> implements Serializable {
+public final class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * serialVersionUID.
@@ -43,7 +56,7 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * Construct a key value pair.
-     * 
+     *
      * @param pKey
      *            the Key for this pair.
      * @param pValue
@@ -57,7 +70,7 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * Get the Key for this pair.
-     * 
+     *
      * @return the Key for the pair, of type K.
      */
     public K getKey() {
@@ -67,7 +80,7 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * Get the Value for this pair.
-     * 
+     *
      * @return the Value for the pair, of type V.
      */
     public V getValue() {
@@ -77,7 +90,7 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * Set the Key for this pair.
-     * 
+     *
      * @param pKey
      *            the Key for the pair, or type K.
      */
@@ -88,7 +101,7 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
 
     /**
      * Set the Value for this pair.
-     * 
+     *
      * @param pValue
      *            the Value for the pair, of type V.
      */
@@ -97,42 +110,28 @@ public class KeyValuePair<K extends CharSequence, V> implements Serializable {
         this.value = pValue;
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     @SuppressWarnings("unchecked")
-    public boolean equals(final Object pObj) {
-
-        boolean equals = true;
-
-        equals &= (pObj != null);
-        equals &= (pObj instanceof KeyValuePair);
-
-        if (equals) {
-            final EqualsBuilder equalsBuilder = new EqualsBuilder();
-            final KeyValuePair<CharSequence, Object> obj = (KeyValuePair<CharSequence, Object>) pObj;
-            equalsBuilder.append(this.key, obj.key);
-            equalsBuilder.append(this.value, obj.value);
-
-            equals = equalsBuilder.isEquals();
+    public boolean equals(final Object obj) {
+        if (!(obj instanceof KeyValuePair)) {
+            return false;
         }
 
-        return equals;
+        final KeyValuePair<CharSequence, Object> that = (KeyValuePair<CharSequence, Object>) obj;
+
+        return new EqualsBuilder()
+                .append(this.key, that.key)
+                .append(this.value, that.value)
+                .isEquals();
     }
 
-    /**
-     * {@inheritDoc}
-     */
+    @Override
     public int hashCode() {
-
-        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder();
-        hashCodeBuilder.append(this.getClass().getName());
-        hashCodeBuilder.append(this.key);
-        hashCodeBuilder.append(this.value);
-
-        final int hashCode = hashCodeBuilder.toHashCode();
-
-        return hashCode;
+        return new HashCodeBuilder()
+                .append(this.getClass().getName())
+                .append(this.key)
+                .append(this.value)
+                .toHashCode();
     }
 
 }
