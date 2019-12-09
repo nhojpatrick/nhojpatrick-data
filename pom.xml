@@ -9,18 +9,18 @@
 	<artifactId>nhojpatrick-data</artifactId>
 	<!--packaging / -->
 	<!--name / -->
-	<name>nhojpatrick - data</name>
+	<name>Data</name>
 	<!--version / -->
 	<version>1.0.0-SNAPSHOT</version>
 	<!--description / -->
 	<description>nhojpatrick, data project.</description>
 	<!--url / -->
-	<url>https://github.com/nhojpatrick/${project.artifactId}</url>
+	<url>https://github.com/nhojpatrick/nhojpatrick-data</url>
 	<!--prerequisites / -->
 	<!--issueManagement / -->
 	<issueManagement>
 		<system>GITHUB</system>
-		<url>http://github.com/nhojpatrick/${project.artifactId}/issues</url>
+		<url>http://github.com/nhojpatrick/nhojpatrick-data/issues</url>
 	</issueManagement>
 	<!--ciManagement / -->
 	<!--inceptionYear / -->
@@ -65,42 +65,103 @@
 					</dependencies>
 				</plugin>
 				<plugin>
+					<groupId>com.github.spotbugs</groupId>
+					<artifactId>spotbugs-maven-plugin</artifactId>
+					<version>3.1.12.2</version>
+					<!--					<configuration>-->
+					<!--						<plugins>-->
+					<!--							<plugin>-->
+					<!--								<groupId>com.h3xstream.findsecbugs</groupId>-->
+					<!--								<artifactId>findsecbugs-plugin</artifactId>-->
+					<!--								<version>1.9.0</version>-->
+					<!--							</plugin>-->
+					<!--							<plugin>-->
+					<!--								<groupId>com.mebigfatguy.fb-contrib</groupId>-->
+					<!--								<artifactId>fb-contrib</artifactId>-->
+					<!--								<version>7.4.6</version>-->
+					<!--							</plugin>-->
+					<!--							<plugin>-->
+					<!--								<groupId>jp.skypencil.findbugs.slf4j</groupId>-->
+					<!--								<artifactId>bug-pattern</artifactId>-->
+					<!--								<version>1.5.0</version>-->
+					<!--							</plugin>-->
+					<!--						</plugins>-->
+					<!--					</configuration>-->
+					<dependencies>
+						<dependency>
+							<groupId>com.github.spotbugs</groupId>
+							<artifactId>spotbugs</artifactId>
+							<version>3.1.12</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>io.takari</groupId>
+					<artifactId>maven</artifactId>
+					<version>0.7.6</version>
+				</plugin>
+				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>2.17</version>
+					<version>3.1.0</version>
 					<configuration>
-						<failsOnError>false</failsOnError>
-						<failOnViolation>false</failOnViolation>
+						<consoleOutput>true</consoleOutput>
+						<failsOnError>true</failsOnError>
+						<checkstyleRules>
+							<module name="Checker">
+								<!-- Checks for Size Violations.                             -->
+								<!-- See https://checkstyle.sourceforge.io/config_sizes.html -->
+								<module name="LineLength">
+									<property name="max" value="120"></property>
+								</module>
+								<!-- Checks for whitespace                               -->
+								<!-- See http://checkstyle.sf.net/config_whitespace.html -->
+								<module name="FileTabCharacter"></module>
+							</module>
+						</checkstyleRules>
 					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
 					<version>3.1.0</version>
-					<configuration>
-						<filesets>
-							<fileset>
-								<directory>test-output</directory>
-								<followSymlinks>false</followSymlinks>
-							</fileset>
-						</filesets>
-					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
 					<version>3.8.1</version>
+					<!--					<configuration>-->
+					<!--						<compilerArgs>-->
+					<!--							<arg>-parameters</arg>-->
+					<!--<arg>-verbose</arg>-->
+					<!--							<arg>-Xlint:unchecked</arg>-->
+					<!--						</compilerArgs>-->
+					<!--					</configuration>-->
+					<executions>
+						<execution>
+							<id>java11</id>
+							<phase>compile</phase>
+							<goals>
+								<goal>compile</goal>
+							</goals>
+							<configuration>
+								<release>11</release>
+								<jdkToolchain>
+									<version>11</version>
+								</jdkToolchain>
+								<compileSourceRoots>
+									<compileSourceRoot>${project.basedir}/src/main/java</compileSourceRoot>
+									<compileSourceRoot>${project.basedir}/src/main/java11</compileSourceRoot>
+								</compileSourceRoots>
+								<multiReleaseOutput>true</multiReleaseOutput>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-deploy-plugin</artifactId>
 					<version>2.8.2</version>
-				</plugin>
-				<plugin>
-					<!-- requires this version as 2.8+ dropped eclipse:m2eclipse -->
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<version>2.7</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -146,12 +207,23 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
-					<version>2.10.3</version>
+					<version>3.1.1</version>
 					<configuration>
+						<source>1.8</source>
+						<!--						<excludes>-->
+						<!--							<exclude>**/module-info.java</exclude>-->
+						<!--							<fileExclude>**/module-info.java</fileExclude>-->
+						<!--							<sourceFileExclude>**/module-info.java</sourceFileExclude>-->
+						<!--						</excludes>-->
+						<!--						<sourceFileExcludes>-->
+						<!--							<exclude>**/module-info.java</exclude>-->
+						<!--							<fileExclude>**/module-info.java</fileExclude>-->
+						<!--							<sourceFileExclude>**/module-info.java</sourceFileExclude>-->
+						<!--						</sourceFileExcludes>-->
 						<tags>
 							<tag>
-								<name>todo</name>
-								<!-- todo tag for all places -->
+								<name>nhojpatrick.todo</name>
+								<!-- @nhojpatrick.todo tag for all places -->
 								<placement>a</placement>
 								<head>To do something:</head>
 							</tag>
@@ -161,7 +233,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jdeps-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>3.1.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -176,7 +248,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-pmd-plugin</artifactId>
-					<version>3.6</version>
+					<version>3.12.0</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -225,8 +297,29 @@
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
-					<artifactId>findbugs-maven-plugin</artifactId>
-					<version>3.0.3</version>
+					<artifactId>build-helper-maven-plugin</artifactId>
+					<version>3.0.0</version>
+					<executions>
+						<execution>
+							<id>remove-project-artifact-default</id>
+							<goals>
+								<goal>remove-project-artifact</goal>
+							</goals>
+							<configuration>
+								<removeAll>true</removeAll>
+							</configuration>
+						</execution>
+						<execution>
+							<id>remove-project-artifact-clean</id>
+							<phase>clean</phase>
+							<goals>
+								<goal>remove-project-artifact</goal>
+							</goals>
+							<configuration>
+								<removeAll>true</removeAll>
+							</configuration>
+						</execution>
+					</executions>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -251,7 +344,7 @@
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>0.8.5</version>
+					<version>${version.org.jacoco}</version>
 					<configuration>
 						<excludes>
 							<exclude>META-INF/versions/**</exclude>
@@ -259,38 +352,10 @@
 					</configuration>
 					<executions>
 						<execution>
-							<id>default-prepare-agent</id>
+							<id>jacoco-prepare-agent</id>
 							<goals>
 								<goal>prepare-agent</goal>
 							</goals>
-						</execution>
-						<execution>
-							<id>default-report</id>
-							<phase>site</phase>
-							<goals>
-								<goal>report</goal>
-							</goals>
-						</execution>
-						<execution>
-							<id>default-check</id>
-							<goals>
-								<goal>check</goal>
-							</goals>
-							<configuration>
-								<rules>
-									<rule>
-										<element>BUNDLE</element>
-										<limits>
-											<limit>
-												<counter>COMPLEXITY</counter>
-												<value>COVEREDRATIO</value>
-												<minimum>0.60</minimum>
-											</limit>
-										</limits>
-									</rule>
-								</rules>
-								<haltOnFailure>false</haltOnFailure>
-							</configuration>
 						</execution>
 					</executions>
 				</plugin>
@@ -303,19 +368,6 @@
 		</pluginManagement>
 		<plugins>
 			<plugin>
-				<groupId>com.github.ekryd.sortpom</groupId>
-				<artifactId>sortpom-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>sortpom-sort</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>sort</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<executions>
@@ -327,7 +379,7 @@
 						<configuration>
 							<rules>
 								<requireJavaVersion>
-									<version>[1.6,9),[11,)</version>
+									<version>[1.8,9),[11,)</version>
 								</requireJavaVersion>
 								<requireMavenVersion>
 									<version>3.6.3</version>
@@ -350,22 +402,6 @@
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>versions-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>versions-check</id>
-						<phase>validate</phase>
-						<goals>
-							<goal>display-dependency-updates</goal>
-							<goal>display-parent-updates</goal>
-							<goal>display-plugin-updates</goal>
-							<goal>display-property-updates</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
 			</plugin>
@@ -380,12 +416,184 @@
 			</properties>
 		</profile>
 		<profile>
-			<id>codequality</id>
+			<id>java11</id>
+			<activation>
+				<jdk>[11,)</jdk>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>build-helper-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>add-source-java11</id>
+								<phase>generate-sources</phase>
+								<goals>
+									<goal>add-source</goal>
+								</goals>
+								<configuration>
+									<sources>
+										<source>${project.basedir}/src/main/java11</source>
+									</sources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+			<properties>
+				<base.java.version>11</base.java.version>
+				<maven.compiler.release>11</maven.compiler.release>
+				<project.custom.java.version>11</project.custom.java.version>
+			</properties>
+		</profile>
+		<profile>
+			<id>qa_checkstyle</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-checkstyle-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>checkstyle-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+						<dependencies>
+							<dependency>
+								<groupId>com.puppycrawl.tools</groupId>
+								<artifactId>checkstyle</artifactId>
+								<version>${version.com.puppycrawl.tools.checkstyle}</version>
+							</dependency>
+						</dependencies>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>qa_jacoco</id>
 			<build>
 				<plugins>
 					<plugin>
 						<groupId>org.jacoco</groupId>
 						<artifactId>jacoco-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>jacoco-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+								<configuration>
+									<rules>
+										<rule>
+											<element>BUNDLE</element>
+											<excludes>
+												<exclude>*Test</exclude>
+												<exclude>*IT</exclude>
+											</excludes>
+											<limits>
+												<limit>
+													<counter>LINE</counter>
+													<value>COVEREDRATIO</value>
+													<minimum>${jacoco.bundle.line.coveredratio}</minimum>
+												</limit>
+												<limit>
+													<counter>CLASS</counter>
+													<value>MISSEDCOUNT</value>
+													<maximum>${jacoco.bundle.class.missedcount}</maximum>
+												</limit>
+											</limits>
+										</rule>
+										<!--										<rule>-->
+										<!--											<element>CLASS</element>-->
+										<!--											<excludes>-->
+										<!--												<exclude>*Test</exclude>-->
+										<!--												<exclude>*IT</exclude>-->
+										<!--											</excludes>-->
+										<!--											<limits>-->
+										<!--												<limit>-->
+										<!--													<counter>LINE</counter>-->
+										<!--													<value>COVEREDRATIO</value>-->
+										<!--													<minimum>${jacoco.class.line.coveredratio}</minimum>-->
+										<!--												</limit>-->
+										<!--												<limit>-->
+										<!--													<counter>CLASS</counter>-->
+										<!--													<value>MISSEDCOUNT</value>-->
+										<!--													<maximum>${jacoco.class.class.missedcount}</maximum>-->
+										<!--												</limit>-->
+										<!--											</limits>-->
+										<!--										</rule>-->
+									</rules>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>qa_javadoc</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>javadoc-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>javadoc</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>qa_pmd</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-pmd-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>pmd-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>check</goal>
+									<goal>cpd-check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>qa_spotbugs</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.github.spotbugs</groupId>
+						<artifactId>spotbugs-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>spotbugs-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
@@ -447,6 +655,75 @@
 				<sort.skip>true</sort.skip>
 			</properties>
 		</profile>
+		<profile>
+			<id>sortpom</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>com.github.ekryd.sortpom</groupId>
+						<artifactId>sortpom-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sortpom-sort</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>sort</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>versions</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>versions-maven-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>versions-check</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>display-dependency-updates</goal>
+									<goal>display-parent-updates</goal>
+									<goal>display-plugin-updates</goal>
+									<goal>display-property-updates</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
+			<id>wrapper</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.takari</groupId>
+						<artifactId>maven</artifactId>
+						<executions>
+							<execution>
+								<id>wrapper-latest</id>
+								<phase>validate</phase>
+								<goals>
+									<goal>wrapper</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
 	<!--modules / -->
 	<!--repositories / -->
@@ -454,8 +731,8 @@
 	<!--dependencies / -->
 	<dependencies>
 		<dependency>
-			<groupId>commons-lang</groupId>
-			<artifactId>commons-lang</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
@@ -477,6 +754,11 @@
 	<reporting>
 		<plugins>
 			<plugin>
+				<groupId>com.github.spotbugs</groupId>
+				<artifactId>spotbugs-maven-plugin</artifactId>
+				<version>3.1.12.2</version>
+			</plugin>
+			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.17</version>
@@ -489,7 +771,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jdeps-plugin</artifactId>
-				<version>3.0.0</version>
+				<version>3.1.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -517,22 +799,17 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.8.1</version>
+				<version>2.9</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.19</version>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.3</version>
+				<version>2.22.2</version>
 			</plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.7.5.201505241946</version>
+				<version>${version.org.jacoco}</version>
 			</plugin>
 		</plugins>
 	</reporting>
@@ -540,9 +817,9 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>commons-lang</groupId>
-				<artifactId>commons-lang</artifactId>
-				<version>2.6</version>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${version.org.apache.commons.lang3}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
@@ -589,11 +866,20 @@
 		<downloadSources>true</downloadSources>
 		<downloadJavadocs>true</downloadJavadocs>
 		<!-- -->
+		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
+		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
 		<version.org.hamcrest>[2,2.999.999)</version.org.hamcrest>
+		<version.org.jacoco>0.8.5</version.org.jacoco>
 		<version.org.junit.jupiter>[5.5.0,5.5.999)</version.org.junit.jupiter>
 		<version.org.junit.vintage>[5.5.0,5.5.999)</version.org.junit.vintage>
 		<version.org.slf4j>[1.7,1.7.999)</version.org.slf4j>
+		<!-- qa user properties -->
+		<checkstyle.maxAllowedViolations>0</checkstyle.maxAllowedViolations>
+		<jacoco.bundle.class.missedcount>999</jacoco.bundle.class.missedcount>
+		<jacoco.bundle.line.coveredratio>0%</jacoco.bundle.line.coveredratio>
+		<pmd.maxAllowedViolations>0</pmd.maxAllowedViolations>
+		<spotbugs.maxAllowedViolations>0</spotbugs.maxAllowedViolations>
 		<!-- sortpom -->
 		<sort.createBackupFile>false</sort.createBackupFile>
 		<sort.nrOfIndentSpace>-1</sort.nrOfIndentSpace>
