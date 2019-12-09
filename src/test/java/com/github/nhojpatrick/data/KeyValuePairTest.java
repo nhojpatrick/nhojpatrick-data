@@ -16,13 +16,13 @@
  */
 package com.github.nhojpatrick.data;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertFalse;
-import static junit.framework.Assert.assertNotNull;
-import static junit.framework.Assert.assertNull;
-import static junit.framework.Assert.assertTrue;
-
 import org.testng.annotations.Test;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.hamcrest.core.IsNull.notNullValue;
+import static org.hamcrest.core.IsNull.nullValue;
 
 /**
  * Key Value Pair tests.
@@ -70,39 +70,39 @@ public class KeyValuePairTest {
     public void keyValuePair_constructor_strBoo_plasiboFALSE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.FALSE);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Boolean value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Boolean.FALSE, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(Boolean.FALSE)));
     }
 
     @Test
     public void keyValuePair_constructor_strBoo_plasiboNULL() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", null);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Boolean value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", null, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(null)));
     }
 
     @Test
     public void keyValuePair_constructor_strBoo_plasiboTRUE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.TRUE);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Boolean value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Boolean.TRUE, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(Boolean.TRUE)));
     }
 
     @Test
@@ -110,13 +110,13 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
                 Integer.MAX_VALUE);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", (Integer) Integer.MAX_VALUE, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) Integer.MAX_VALUE)));
     }
 
     @Test
@@ -124,143 +124,143 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
                 Integer.MIN_VALUE);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", (Integer) Integer.MIN_VALUE, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) Integer.MIN_VALUE)));
     }
 
     @Test
     public void keyValuePair_constructor_strInt_plasiboNULL() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", null);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", null, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(null)));
     }
 
     @Test
     public void keyValuePair_constructor_strInt_plasiboZero() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", 0);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", (Integer) 0, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) 0)));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_emptyEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", "");
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "", value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo("")));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_emptyNULL() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", null);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", null, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(null)));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_emptyPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", "plasibo");
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "plasibo", value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo("plasibo")));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_NULLEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null, "");
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", null, key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo(null)));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "", value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo("")));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_NULLNULL() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null, null);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", null, key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo(null)));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", null, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(null)));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_plasiboEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "");
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "", value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo("")));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_plasiboNULL() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", null);
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", null, value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(null)));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_plasiboPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "plasibo");
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final String value = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "plasibo", value);
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo("plasibo")));
     }
 
     @Test
@@ -269,21 +269,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_FALSE;
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(false);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(true);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(true);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -292,21 +292,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_NULL;
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(false);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(true);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(true);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -315,21 +315,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_TRUE;
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(false);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(true);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(true);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -338,24 +338,24 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_MAX;
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(Integer.MAX_VALUE);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -364,24 +364,24 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_MIN;
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(Integer.MAX_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -390,24 +390,24 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_NULL;
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(Integer.MAX_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -416,24 +416,24 @@ public class KeyValuePairTest {
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_ZERO;
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue(Integer.MAX_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(0);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(0);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -442,21 +442,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_EMPTY;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
 
         keyValuePair.setValue("");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -465,21 +465,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_NULL;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -488,21 +488,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_PLASIBO;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -511,21 +511,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_NULL_EMPTY;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
 
         keyValuePair.setValue("");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -534,21 +534,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_NULL_NULL;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -557,21 +557,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_NULL_PLASIBO;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -580,21 +580,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_EMPTY;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue("");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -603,21 +603,21 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_NULL;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("plasibo");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
@@ -626,315 +626,315 @@ public class KeyValuePairTest {
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_PLASIBO;
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
 
         keyValuePair.setValue("");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue(null);
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(false)));
 
         keyValuePair.setValue("plasibo");
-        assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair), is(equalTo(true)));
 
         keyValuePair.setValue("new Object()");
-        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
+        assertThat("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()), is(equalTo(false)));
     }
 
     @Test
     public void keyValuePair_getKey_strStr_emptyPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("")));
     }
 
     @Test
     public void keyValuePair_getKey_strStr_NULLPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
 
         final String key = keyValuePair.getKey();
-        assertNull("Unexpected KeyValuePair.getKey()", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(nullValue()));
     }
 
     @Test
     public void keyValuePair_getKey_strStr_plasiboPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
 
         final String key = keyValuePair.getKey();
-        assertEquals("Unexpected KeyValuePair.getKey()", "Plasibo", key);
+        assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("Plasibo")));
     }
 
     @Test
     public void keyValuePair_getValue_strBoo_emptyFALSE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(false);
 
         final Boolean bool = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Boolean.FALSE, bool);
+        assertThat("Unexpected KeyValuePair.getValue()", bool, is(equalTo(Boolean.FALSE)));
     }
 
     @Test
     public void keyValuePair_getValue_strBoo_emptyNULL() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
 
         final Boolean bool = keyValuePair.getValue();
-        assertNull("Unexpected KeyValuePair.getValue()", bool);
+        assertThat("Unexpected KeyValuePair.getValue()", bool, is(nullValue()));
     }
 
     @Test
     public void keyValuePair_getValue_strBoo_emptyTRUE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(true);
 
         final Boolean bool = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Boolean.TRUE, bool);
+        assertThat("Unexpected KeyValuePair.getValue()", bool, is(equalTo(Boolean.TRUE)));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyMAX() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(Integer.MAX_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MAX_VALUE), integer);
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(Integer.MAX_VALUE))));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyMIN() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(Integer.MIN_VALUE), integer);
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(Integer.MIN_VALUE))));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyNULL() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
 
         final Integer integer = keyValuePair.getValue();
-        assertNull("Unexpected KeyValuePair.getValue()", integer);
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(nullValue()));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyZero() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(0);
 
         final Integer integer = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", Integer.valueOf(0), integer);
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(0))));
     }
 
     @Test
     public void keyValuePair_getValue_strStr_emptyEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("");
 
         final String string = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "", string);
+        assertThat("Unexpected KeyValuePair.getValue()", string, is(equalTo("")));
     }
 
     @Test
     public void keyValuePair_getValue_strStr_emptyNULL() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
 
         final String string = keyValuePair.getValue();
-        assertNull("Unexpected KeyValuePair.getValue()", string);
+        assertThat("Unexpected KeyValuePair.getValue()", string, is(nullValue()));
     }
 
     @Test
     public void keyValuePair_getValue_strStr_emptyPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("Plasibo");
 
         final String string = keyValuePair.getValue();
-        assertEquals("Unexpected KeyValuePair.getValue()", "Plasibo", string);
+        assertThat("Unexpected KeyValuePair.getValue()", string, is(equalTo("Plasibo")));
     }
 
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboFALSE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(false);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311121331, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311121331)));
     }
 
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboNULL() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(null);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311120094, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311120094)));
     }
 
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboTRUE() {
 
         final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(true);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311121325, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311121325)));
     }
 
     @Test
     public void keyValuePair_hashCode_strInt_plasiboMAX() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(Integer.MAX_VALUE);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", -1836363555, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(-1836363555)));
     }
 
     @Test
     public void keyValuePair_hashCode_strInt_plasiboMIN() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(Integer.MIN_VALUE);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", -1836363554, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(-1836363554)));
     }
 
     @Test
     public void keyValuePair_hashCode_strInt_plasiboNULL() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(null);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311120094, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311120094)));
     }
 
     @Test
     public void keyValuePair_hashCode_strInt_plasiboZero() {
 
         final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue(0);
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311120094, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311120094)));
     }
 
     @Test
     public void keyValuePair_hashCode_strStr_emptyEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", -62888490, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(-62888490)));
     }
 
     @Test
     public void keyValuePair_hashCode_strStr_emptyPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("Plasibo");
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 1108021822, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(1108021822)));
     }
 
     @Test
     public void keyValuePair_hashCode_strStr_plasiboEmpty() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 311120094, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(311120094)));
     }
 
     @Test
     public void keyValuePair_hashCode_strStr_plasiboPlasibo() {
 
         final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
-        assertNotNull("KeyValuePair should not be null", keyValuePair);
+        assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
         keyValuePair.setValue("Plasibo");
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
-        assertEquals("Unexpected KeyValuePair.hashCode()", 1482030406, keyValuePairHashCode);
+        assertThat("Unexpected KeyValuePair.hashCode()", keyValuePairHashCode, is(equalTo(1482030406)));
     }
 
     @Test(enabled = false)
