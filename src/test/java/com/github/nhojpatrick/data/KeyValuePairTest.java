@@ -281,6 +281,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(true);
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(true);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -301,6 +304,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(true);
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(true);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -321,6 +327,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(true);
         assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(true);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -344,6 +353,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(0);
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(0);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -367,6 +379,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(0);
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(0);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -390,6 +405,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(0);
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(0);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -413,6 +431,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue(0);
         assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue(0);
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -433,6 +454,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -453,6 +477,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -473,6 +500,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -493,6 +523,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -513,6 +546,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -533,6 +569,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -553,6 +592,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -573,6 +615,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
@@ -593,6 +638,9 @@ public class KeyValuePairTest {
 
         keyValuePair.setValue("plasibo");
         assertTrue("Unexpected KeyValuePair.equals(Object)", REF.equals(keyValuePair));
+
+        keyValuePair.setValue("new Object()");
+        assertFalse("Unexpected KeyValuePair.equals(Object)", REF.equals(new Object()));
     }
 
     @Test
