@@ -31,45 +31,45 @@ import static org.hamcrest.core.IsNull.nullValue;
  */
 public class KeyValuePairTest {
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_FALSE = new KeyValuePair<String, Boolean>("plasibo", false);
+    private final KeyValuePair<String, Boolean> STR_BOO_PLASIBO_FALSE = new KeyValuePair<>("plasibo", false);
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_NULL = new KeyValuePair<String, Boolean>("plasibo", null);
+    private final KeyValuePair<String, Boolean> STR_BOO_PLASIBO_NULL = new KeyValuePair<>("plasibo", null);
 
-    private KeyValuePair<String, Boolean> STR_BOO_PLASIBO_TRUE = new KeyValuePair<String, Boolean>("plasibo", true);
+    private final KeyValuePair<String, Boolean> STR_BOO_PLASIBO_TRUE = new KeyValuePair<>("plasibo", true);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MAX = new KeyValuePair<String, Integer>("plasibo",
+    private final KeyValuePair<String, Integer> STR_INT_PLASIBO_MAX = new KeyValuePair<>("plasibo",
             Integer.MAX_VALUE);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_MIN = new KeyValuePair<String, Integer>("plasibo",
+    private final KeyValuePair<String, Integer> STR_INT_PLASIBO_MIN = new KeyValuePair<>("plasibo",
             Integer.MIN_VALUE);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_NULL = new KeyValuePair<String, Integer>("plasibo", null);
+    private final KeyValuePair<String, Integer> STR_INT_PLASIBO_NULL = new KeyValuePair<>("plasibo", null);
 
-    private KeyValuePair<String, Integer> STR_INT_PLASIBO_ZERO = new KeyValuePair<String, Integer>("plasibo", 0);
+    private final KeyValuePair<String, Integer> STR_INT_PLASIBO_ZERO = new KeyValuePair<>("plasibo", 0);
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_EMPTY = new KeyValuePair<String, String>("", "");
+    private final KeyValuePair<String, String> STR_STR_EMPTY_EMPTY = new KeyValuePair<>("", "");
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_NULL = new KeyValuePair<String, String>("", null);
+    private final KeyValuePair<String, String> STR_STR_EMPTY_NULL = new KeyValuePair<>("", null);
 
-    private KeyValuePair<String, String> STR_STR_EMPTY_PLASIBO = new KeyValuePair<String, String>("", "plasibo");
+    private final KeyValuePair<String, String> STR_STR_EMPTY_PLASIBO = new KeyValuePair<>("", "plasibo");
 
-    private KeyValuePair<String, String> STR_STR_NULL_EMPTY = new KeyValuePair<String, String>(null, "");
+    private final KeyValuePair<String, String> STR_STR_NULL_EMPTY = new KeyValuePair<>(null, "");
 
-    private KeyValuePair<String, String> STR_STR_NULL_NULL = new KeyValuePair<String, String>(null, null);
+    private final KeyValuePair<String, String> STR_STR_NULL_NULL = new KeyValuePair<>(null, null);
 
-    private KeyValuePair<String, String> STR_STR_NULL_PLASIBO = new KeyValuePair<String, String>(null, "plasibo");
+    private final KeyValuePair<String, String> STR_STR_NULL_PLASIBO = new KeyValuePair<>(null, "plasibo");
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_EMPTY = new KeyValuePair<String, String>("plasibo", "");
+    private final KeyValuePair<String, String> STR_STR_PLASIBO_EMPTY = new KeyValuePair<>("plasibo", "");
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_NULL = new KeyValuePair<String, String>("plasibo", null);
+    private final KeyValuePair<String, String> STR_STR_PLASIBO_NULL = new KeyValuePair<>("plasibo", null);
 
-    private KeyValuePair<String, String> STR_STR_PLASIBO_PLASIBO = new KeyValuePair<String, String>("plasibo",
+    private final KeyValuePair<String, String> STR_STR_PLASIBO_PLASIBO = new KeyValuePair<>("plasibo",
             "plasibo");
 
     @Test
     public void keyValuePair_constructor_strBoo_plasiboFALSE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.FALSE);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>("plasibo", Boolean.FALSE);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -82,7 +82,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strBoo_plasiboNULL() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", null);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>("plasibo", null);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -95,7 +95,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strBoo_plasiboTRUE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>("plasibo", Boolean.TRUE);
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>("plasibo", Boolean.TRUE);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -108,7 +108,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboMAX() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>("plasibo",
                 Integer.MAX_VALUE);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
@@ -116,13 +116,13 @@ public class KeyValuePairTest {
         assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) Integer.MAX_VALUE)));
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(Integer.MAX_VALUE)));
     }
 
     @Test
     public void keyValuePair_constructor_strInt_plasiboMIN() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo",
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>("plasibo",
                 Integer.MIN_VALUE);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
@@ -130,13 +130,13 @@ public class KeyValuePairTest {
         assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) Integer.MIN_VALUE)));
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(Integer.MIN_VALUE)));
     }
 
     @Test
     public void keyValuePair_constructor_strInt_plasiboNULL() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", null);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>("plasibo", null);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -149,20 +149,20 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strInt_plasiboZero() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>("plasibo", 0);
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>("plasibo", 0);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
         assertThat("Unexpected KeyValuePair.getKey()", key, is(equalTo("plasibo")));
 
         final Integer value = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo((Integer) 0)));
+        assertThat("Unexpected KeyValuePair.getValue()", value, is(equalTo(0)));
     }
 
     @Test
     public void keyValuePair_constructor_strStr_emptyEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", "");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("", "");
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -175,7 +175,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_emptyNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", null);
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("", null);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -188,7 +188,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_emptyPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("", "plasibo");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("", "plasibo");
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -201,7 +201,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_NULLEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null, "");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>(null, "");
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -214,7 +214,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_NULLNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>(null, null);
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>(null, null);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -227,7 +227,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("plasibo", "");
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -240,7 +240,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", null);
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("plasibo", null);
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -253,7 +253,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_constructor_strStr_plasiboPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>("plasibo", "plasibo");
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>("plasibo", "plasibo");
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final String key = keyValuePair.getKey();
@@ -268,7 +268,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_FALSE;
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -291,7 +291,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_NULL;
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -314,7 +314,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Boolean> REF = STR_BOO_PLASIBO_TRUE;
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -337,7 +337,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_MAX;
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -363,7 +363,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_MIN;
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -389,7 +389,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_NULL;
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -415,7 +415,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, Integer> REF = STR_INT_PLASIBO_ZERO;
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -441,7 +441,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_EMPTY;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
@@ -464,7 +464,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_NULL;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
@@ -487,7 +487,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_EMPTY_PLASIBO;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
@@ -510,7 +510,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_NULL_EMPTY;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
@@ -533,7 +533,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_NULL_NULL;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
@@ -556,7 +556,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_NULL_PLASIBO;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
@@ -579,7 +579,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_EMPTY;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -602,7 +602,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_NULL;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -625,7 +625,7 @@ public class KeyValuePairTest {
 
         final KeyValuePair<String, String> REF = STR_STR_PLASIBO_PLASIBO;
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("plasibo");
@@ -646,7 +646,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getKey_strStr_emptyPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("");
@@ -658,7 +658,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getKey_strStr_NULLPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey(null);
@@ -670,7 +670,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getKey_strStr_plasiboPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -682,7 +682,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strBoo_emptyFALSE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(false);
@@ -694,7 +694,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strBoo_emptyNULL() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
@@ -706,7 +706,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strBoo_emptyTRUE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(true);
@@ -718,31 +718,31 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strInt_emptyMAX() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(Integer.MAX_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(Integer.MAX_VALUE))));
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.MAX_VALUE)));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyMIN() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(Integer.MIN_VALUE);
 
         final Integer integer = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(Integer.MIN_VALUE))));
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.MIN_VALUE)));
     }
 
     @Test
     public void keyValuePair_getValue_strInt_emptyNULL() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
@@ -754,19 +754,19 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strInt_emptyZero() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(0);
 
         final Integer integer = keyValuePair.getValue();
-        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(Integer.valueOf(0))));
+        assertThat("Unexpected KeyValuePair.getValue()", integer, is(equalTo(0)));
     }
 
     @Test
     public void keyValuePair_getValue_strStr_emptyEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("");
@@ -778,7 +778,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strStr_emptyNULL() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue(null);
@@ -790,7 +790,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_getValue_strStr_emptyPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("Plasibo");
@@ -802,7 +802,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboFALSE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -815,7 +815,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboNULL() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -828,7 +828,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strBoo_plasiboTRUE() {
 
-        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<String, Boolean>();
+        final KeyValuePair<String, Boolean> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -841,7 +841,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strInt_plasiboMAX() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -854,7 +854,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strInt_plasiboMIN() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -867,7 +867,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strInt_plasiboNULL() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -880,7 +880,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strInt_plasiboZero() {
 
-        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<String, Integer>();
+        final KeyValuePair<String, Integer> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -893,7 +893,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strStr_emptyEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         final int keyValuePairHashCode = keyValuePair.hashCode();
@@ -903,7 +903,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strStr_emptyPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setValue("Plasibo");
@@ -915,7 +915,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strStr_plasiboEmpty() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
@@ -927,7 +927,7 @@ public class KeyValuePairTest {
     @Test
     public void keyValuePair_hashCode_strStr_plasiboPlasibo() {
 
-        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<String, String>();
+        final KeyValuePair<String, String> keyValuePair = new KeyValuePair<>();
         assertThat("KeyValuePair should not be null", keyValuePair, is(notNullValue()));
 
         keyValuePair.setKey("Plasibo");
