@@ -55,12 +55,12 @@
 				<plugin>
 					<groupId>com.github.ekryd.sortpom</groupId>
 					<artifactId>sortpom-maven-plugin</artifactId>
-					<version>2.10.0</version>
+					<version>${plugins.ekryd-sortpom-maven-plugin}</version>
 					<dependencies>
 						<dependency>
-							<groupId>com.github.nhojpatrick.sortpom</groupId>
+							<groupId>com.github.nhojpatrick.qa</groupId>
 							<artifactId>nhojpatrick-sortpom-sortorderfile</artifactId>
-							<version>1.1</version>
+							<version>[1.1.0,1.1.999)</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -663,6 +663,7 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<build>
+				<defaultGoal>validate</defaultGoal>
 				<plugins>
 					<plugin>
 						<groupId>com.github.ekryd.sortpom</groupId>
@@ -679,6 +680,9 @@
 					</plugin>
 				</plugins>
 			</build>
+			<properties>
+				<enforcer.fail>false</enforcer.fail>
+			</properties>
 		</profile>
 		<profile>
 			<id>versions</id>
@@ -881,6 +885,7 @@
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
 		<plugins.codehaus.versions-maven-plugin>2.16.2</plugins.codehaus.versions-maven-plugin>
+		<plugins.ekryd-sortpom-maven-plugin>2.10.0</plugins.ekryd-sortpom-maven-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
