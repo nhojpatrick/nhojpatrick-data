@@ -191,7 +191,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<version>3.2.0</version>
+					<version>${plugins.maven-jar-plugin}</version>
 					<configuration>
 						<archive>
 							<manifestEntries>
@@ -890,6 +890,7 @@
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
+		<plugins.maven-jar-plugin>3.2.0</plugins.maven-jar-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
