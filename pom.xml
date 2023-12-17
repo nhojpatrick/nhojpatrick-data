@@ -892,7 +892,7 @@
 		<plugins.maven-enforcer-plugin>3.4.1</plugins.maven-enforcer-plugin>
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
 		<plugins.maven-jar-plugin>3.3.0</plugins.maven-jar-plugin>
-		<plugins.maven-surefire-plugin>2.22.2</plugins.maven-surefire-plugin>
+		<plugins.maven-surefire-plugin>3.0.0-M1</plugins.maven-surefire-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
