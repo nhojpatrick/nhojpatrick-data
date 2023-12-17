@@ -886,7 +886,7 @@
 		<!-- plugin versions -->
 		<plugins.codehaus.versions-maven-plugin>2.16.2</plugins.codehaus.versions-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
-		<plugins.maven-clean-plugin>3.2.0</plugins.maven-clean-plugin>
+		<plugins.maven-clean-plugin>3.3.1</plugins.maven-clean-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
