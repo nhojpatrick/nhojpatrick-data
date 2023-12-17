@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<!--modelVersion / -->
 	<modelVersion>4.0.0</modelVersion>
 	<!--parent / -->
@@ -13,14 +13,14 @@
 	<!--version / -->
 	<version>1.0.1-SNAPSHOT</version>
 	<!--description / -->
-	<description>nhojpatrick, data project.</description>
+	<description>nhojpatrick, data project</description>
 	<!--url / -->
 	<url>https://github.com/nhojpatrick/nhojpatrick-data</url>
 	<!--prerequisites / -->
 	<!--issueManagement / -->
 	<issueManagement>
 		<system>GITHUB</system>
-		<url>http://github.com/nhojpatrick/nhojpatrick-data/issues</url>
+		<url>https://github.com/nhojpatrick/nhojpatrick-data/issues</url>
 	</issueManagement>
 	<!--ciManagement / -->
 	<!--inceptionYear / -->
@@ -38,17 +38,17 @@
 	<licenses>
 		<license>
 			<name>The Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
 	<!--scm / -->
 	<scm>
 		<connection>scm:git:git://github.com/nhojpatrick/nhojpatrick-data.git</connection>
 		<developerConnection>scm:git:ssh://github.com:nhojpatrick/nhojpatrick-data.git</developerConnection>
-		<url>http://github.com/nhojpatrick/nhojpatrick-data/tree/master</url>
+		<url>https://github.com/nhojpatrick/nhojpatrick-data/tree/master</url>
 	</scm>
 	<!--organization / -->
-	<!--build /-->
+	<!--build / -->
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -412,6 +412,8 @@
 		<profile>
 			<id>cicd</id>
 			<properties>
+				<downloadJavadocs>false</downloadJavadocs>
+				<downloadSources>false</downloadSources>
 				<sort.skip>true</sort.skip>
 			</properties>
 		</profile>
@@ -851,31 +853,33 @@
 	</dependencyManagement>
 	<!--distributionManagement / -->
 	<distributionManagement>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+		</repository>
 		<snapshotRepository>
 			<id>ossrh</id>
 			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
-		<repository>
-			<id>ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-		</repository>
 	</distributionManagement>
 	<!--properties / -->
 	<properties>
 		<!-- custom properties -->
+		<project.Automatic-Module-Name>com.github.nhojpatrick.data</project.Automatic-Module-Name>
 		<project.custom.encoding>UTF-8</project.custom.encoding>
 		<project.custom.java.version>1.8</project.custom.java.version>
-		<!-- override maven properties -->
-		<maven.test.failure.ignore>false</maven.test.failure.ignore>
+		<!-- maven user properties -->
+		<downloadJavadocs>true</downloadJavadocs>
+		<downloadSources>true</downloadSources>
+		<generateBackupPoms>false</generateBackupPoms>
 		<maven.compiler.source>${project.custom.java.version}</maven.compiler.source>
 		<maven.compiler.target>${project.custom.java.version}</maven.compiler.target>
-		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
+		<maven.test.failure.ignore>false</maven.test.failure.ignore>
 		<project.build.outputEncoding>${project.custom.encoding}</project.build.outputEncoding>
+		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
-		<!-- maven user properties -->
-		<downloadSources>true</downloadSources>
-		<downloadJavadocs>true</downloadJavadocs>
-		<!-- -->
+		<!-- plugin versions -->
+		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
@@ -891,20 +895,18 @@
 		<jacoco.bundle.line.coveredratio>0%</jacoco.bundle.line.coveredratio>
 		<pmd.maxAllowedViolations>0</pmd.maxAllowedViolations>
 		<spotbugs.maxAllowedViolations>0</spotbugs.maxAllowedViolations>
-		<!-- sortpom -->
+		<!-- sortpom-maven-plugin -->
 		<sort.createBackupFile>false</sort.createBackupFile>
 		<sort.nrOfIndentSpace>-1</sort.nrOfIndentSpace>
 		<sort.pomFile>pom.xml</sort.pomFile>
 		<sort.sortDependencies>groupId,artifactId,version,scope</sort.sortDependencies>
 		<sort.sortModules>true</sort.sortModules>
-		<sort.sortOrderFile>com/github/nhojpatrick/sortpom/sortorderfile/nhojpatrick.xml</sort.sortOrderFile>
+		<sort.sortOrderFile>com/github/nhojpatrick/qa/sortpom/sortorderfile/sortorderfile.xml</sort.sortOrderFile>
 		<sort.sortPlugins>groupId,artifactId,version,scope</sort.sortPlugins>
 		<sort.sortProperties>false</sort.sortProperties>
 		<!-- versions-maven-plugin -->
-		<generateBackupPoms>false</generateBackupPoms>
-		<maven.version.rules>classpath:///com/github/nhojpatrick/versions/ruleset/rules.xml</maven.version.rules>
+		<maven.version.rules>classpath:///com/github/nhojpatrick/qa/versions/ruleset/rules.xml</maven.version.rules>
 		<!-- JPMS -->
-		<project.Automatic-Module-Name>com.github.nhojpatrick.data</project.Automatic-Module-Name>
 		<toolchain.vendor>openjdk</toolchain.vendor>
 		<base.java.version>1.8</base.java.version>
 	</properties>
