@@ -888,7 +888,7 @@
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
 		<plugins.maven-clean-plugin>3.3.2</plugins.maven-clean-plugin>
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
-		<plugins.maven-deploy-plugin>3.0.0</plugins.maven-deploy-plugin>
+		<plugins.maven-deploy-plugin>3.1.0</plugins.maven-deploy-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
