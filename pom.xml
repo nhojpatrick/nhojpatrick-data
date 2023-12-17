@@ -880,7 +880,7 @@
 		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
-		<plugins.codehaus.versions-maven-plugin>2.8.1</plugins.codehaus.versions-maven-plugin>
+		<plugins.codehaus.versions-maven-plugin>2.9.0</plugins.codehaus.versions-maven-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
