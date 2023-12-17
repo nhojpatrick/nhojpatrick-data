@@ -344,7 +344,7 @@
 				<plugin>
 					<groupId>org.jacoco</groupId>
 					<artifactId>jacoco-maven-plugin</artifactId>
-					<version>${version.org.jacoco}</version>
+					<version>${plugins.jacoco-maven-plugin}</version>
 					<configuration>
 						<excludes>
 							<exclude>META-INF/versions/**</exclude>
@@ -821,7 +821,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>${version.org.jacoco}</version>
+				<version>${plugins.jacoco-maven-plugin}</version>
 			</plugin>
 		</plugins>
 	</reporting>
@@ -886,6 +886,7 @@
 		<!-- plugin versions -->
 		<plugins.codehaus.versions-maven-plugin>2.16.2</plugins.codehaus.versions-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
+		<plugins.jacoco-maven-plugin>0.8.5</plugins.jacoco-maven-plugin>
 		<plugins.maven-clean-plugin>3.3.2</plugins.maven-clean-plugin>
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
@@ -898,7 +899,6 @@
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
 		<version.org.hamcrest>[2,2.999.999)</version.org.hamcrest>
-		<version.org.jacoco>0.8.5</version.org.jacoco>
 		<version.org.junit.jupiter>[5.5.0,5.5.999)</version.org.junit.jupiter>
 		<version.org.junit.vintage>[5.5.0,5.5.999)</version.org.junit.vintage>
 		<version.org.slf4j>[1.7,1.7.999)</version.org.slf4j>
