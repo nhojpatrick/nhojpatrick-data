@@ -889,7 +889,7 @@
 		<plugins.maven-clean-plugin>3.3.2</plugins.maven-clean-plugin>
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
-		<plugins.maven-enforcer-plugin>3.4.0</plugins.maven-enforcer-plugin>
+		<plugins.maven-enforcer-plugin>3.4.1</plugins.maven-enforcer-plugin>
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
 		<plugins.maven-jar-plugin>3.3.0</plugins.maven-jar-plugin>
 		<!-- dependency versions -->
