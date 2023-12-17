@@ -890,7 +890,7 @@
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
-		<plugins.maven-jar-plugin>3.2.1</plugins.maven-jar-plugin>
+		<plugins.maven-jar-plugin>3.2.2</plugins.maven-jar-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
