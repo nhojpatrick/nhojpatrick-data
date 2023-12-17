@@ -324,12 +324,12 @@
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
-					<version>2.7</version>
+					<version>${plugins.codehaus.versions-maven-plugin}</version>
 					<dependencies>
 						<dependency>
-							<groupId>com.github.nhojpatrick.versions</groupId>
+							<groupId>com.github.nhojpatrick.qa</groupId>
 							<artifactId>nhojpatrick-versions-ruleset</artifactId>
-							<version>1.1</version>
+							<version>[1.1.0,1.1.999)</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -682,10 +682,8 @@
 		</profile>
 		<profile>
 			<id>versions</id>
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
 			<build>
+				<defaultGoal>validate</defaultGoal>
 				<plugins>
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
@@ -695,9 +693,9 @@
 								<id>versions-check</id>
 								<phase>validate</phase>
 								<goals>
-									<goal>display-dependency-updates</goal>
 									<goal>display-parent-updates</goal>
 									<goal>display-plugin-updates</goal>
+									<goal>display-dependency-updates</goal>
 									<goal>display-property-updates</goal>
 								</goals>
 							</execution>
@@ -705,6 +703,9 @@
 					</plugin>
 				</plugins>
 			</build>
+			<properties>
+				<sort.skip>true</sort.skip>
+			</properties>
 		</profile>
 		<profile>
 			<id>wrapper</id>
@@ -879,6 +880,7 @@
 		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
+		<plugins.codehaus.versions-maven-plugin>2.7</plugins.codehaus.versions-maven-plugin>
 		<!-- dependency versions -->
 		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
