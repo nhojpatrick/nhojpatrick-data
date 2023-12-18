@@ -171,7 +171,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-failsafe-plugin</artifactId>
-					<version>2.22.2</version>
+					<version>${plugins.maven-failsafe-plugin}</version>
 					<configuration>
 						<includes>
 							<include>**/*IT.java</include>
@@ -891,6 +891,7 @@
 		<plugins.maven-compiler-plugin>3.11.0</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
 		<plugins.maven-enforcer-plugin>3.4.1</plugins.maven-enforcer-plugin>
+		<plugins.maven-failsafe-plugin>2.22.2</plugins.maven-failsafe-plugin>
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
 		<plugins.maven-jar-plugin>3.3.0</plugins.maven-jar-plugin>
 		<plugins.maven-surefire-plugin>3.2.3</plugins.maven-surefire-plugin>
