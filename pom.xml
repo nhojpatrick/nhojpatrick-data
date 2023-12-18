@@ -829,6 +829,15 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<?SORTPOM IGNORE?>
+				<groupId>org.junit</groupId>
+				<artifactId>junit-bom</artifactId>
+				<version>${version.org.junit}</version>
+				<type>pom</type>
+				<scope>import</scope>
+				<?SORTPOM RESUME?>
+			</dependency>
+			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-lang3</artifactId>
 				<version>${version.org.apache.commons.lang3}</version>
@@ -900,8 +909,7 @@
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
 		<version.org.hamcrest>[2,2.999.999)</version.org.hamcrest>
-		<version.org.junit.jupiter>[5.5.0,5.5.999)</version.org.junit.jupiter>
-		<version.org.junit.vintage>[5.5.0,5.5.999)</version.org.junit.vintage>
+		<version.org.junit>5.5.0</version.org.junit>
 		<version.org.slf4j>[1.7,1.7.999)</version.org.slf4j>
 		<version.org.testng>7.0.0</version.org.testng>
 		<!-- qa user properties -->
