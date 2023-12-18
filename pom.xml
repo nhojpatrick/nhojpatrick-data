@@ -909,7 +909,7 @@
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
 		<version.org.hamcrest>[2,2.999.999)</version.org.hamcrest>
-		<version.org.junit>5.7.0</version.org.junit>
+		<version.org.junit>5.7.1</version.org.junit>
 		<version.org.slf4j>[1.7,1.7.999)</version.org.slf4j>
 		<version.org.testng>7.0.0</version.org.testng>
 		<!-- qa user properties -->
