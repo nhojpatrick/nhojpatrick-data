@@ -905,7 +905,7 @@
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.versions-maven-plugin>2.16.2</plugins.versions-maven-plugin>
 		<!-- dependency versions -->
-		<version.com.puppycrawl.tools.checkstyle>8.27</version.com.puppycrawl.tools.checkstyle>
+		<version.com.puppycrawl.tools.checkstyle>10.13.0</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
 		<version.org.hamcrest>[2,2.999.999)</version.org.hamcrest>
