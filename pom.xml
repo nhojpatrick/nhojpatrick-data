@@ -103,7 +103,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>${plugins.maven-checkstyle-plugin}</version>
 					<configuration>
 						<consoleOutput>true</consoleOutput>
 						<failsOnError>true</failsOnError>
@@ -895,6 +895,7 @@
 		<!-- plugin versions -->
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
 		<plugins.jacoco-maven-plugin>0.8.11</plugins.jacoco-maven-plugin>
+		<plugins.maven-checkstyle-plugin>3.1.0</plugins.maven-checkstyle-plugin>
 		<plugins.maven-clean-plugin>3.3.2</plugins.maven-clean-plugin>
 		<plugins.maven-compiler-plugin>3.12.1</plugins.maven-compiler-plugin>
 		<plugins.maven-deploy-plugin>3.1.1</plugins.maven-deploy-plugin>
