@@ -356,7 +356,7 @@
 				<plugin>
 					<groupId>org.eluder.coveralls</groupId>
 					<artifactId>coveralls-maven-plugin</artifactId>
-					<version>4.3.0</version>
+					<version>${plugins.coveralls-maven-plugin}</version>
 					<configuration>
 						<repoToken>${COVERALLS_REPO_TOKEN}</repoToken>
 					</configuration>
@@ -894,6 +894,7 @@
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
 		<plugins.build-helper-maven-plugin>3.0.0</plugins.build-helper-maven-plugin>
+		<plugins.coveralls-maven-plugin>4.3.0</plugins.coveralls-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
 		<plugins.jacoco-maven-plugin>0.8.11</plugins.jacoco-maven-plugin>
 		<plugins.maven-checkstyle-plugin>3.3.1</plugins.maven-checkstyle-plugin>
