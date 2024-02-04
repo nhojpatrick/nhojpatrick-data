@@ -91,7 +91,7 @@
 						<dependency>
 							<groupId>com.github.spotbugs</groupId>
 							<artifactId>spotbugs</artifactId>
-							<version>3.1.12</version>
+							<version>${version.com.github.spotbugs}</version>
 						</dependency>
 					</dependencies>
 				</plugin>
@@ -907,6 +907,7 @@
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
 		<plugins.versions-maven-plugin>2.16.2</plugins.versions-maven-plugin>
 		<!-- dependency versions -->
+		<version.com.github.spotbugs>3.1.12</version.com.github.spotbugs>
 		<version.com.puppycrawl.tools.checkstyle>10.13.0</version.com.puppycrawl.tools.checkstyle>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
 		<version.org.apache.logging.log4j>2.12.1</version.org.apache.logging.log4j>
