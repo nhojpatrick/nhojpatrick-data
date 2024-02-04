@@ -268,7 +268,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
-					<version>3.1.0</version>
+					<version>${plugins.maven-resources-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -914,6 +914,7 @@
 		<plugins.maven-project-info-reports-plugin>3.5.0</plugins.maven-project-info-reports-plugin>
 		<plugins.maven-remote-resources-plugin>3.1.0</plugins.maven-remote-resources-plugin>
 		<plugins.maven-repository-plugin>2.4</plugins.maven-repository-plugin>
+		<plugins.maven-resources-plugin>3.1.0</plugins.maven-resources-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
