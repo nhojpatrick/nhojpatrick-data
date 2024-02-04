@@ -96,11 +96,6 @@
 					</dependencies>
 				</plugin>
 				<plugin>
-					<groupId>io.takari</groupId>
-					<artifactId>maven</artifactId>
-					<version>0.7.6</version>
-				</plugin>
-				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-checkstyle-plugin</artifactId>
 					<version>${plugins.maven-checkstyle-plugin}</version>
@@ -294,6 +289,11 @@
 							</goals>
 						</execution>
 					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-wrapper-plugin</artifactId>
+					<version>${plugins.maven-wrapper-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
@@ -711,26 +711,6 @@
 				<sort.skip>true</sort.skip>
 			</properties>
 		</profile>
-		<profile>
-			<id>wrapper</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>io.takari</groupId>
-						<artifactId>maven</artifactId>
-						<executions>
-							<execution>
-								<id>wrapper-latest</id>
-								<phase>validate</phase>
-								<goals>
-									<goal>wrapper</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
 	</profiles>
 	<!--modules / -->
 	<!--repositories / -->
@@ -904,6 +884,7 @@
 		<plugins.maven-install-plugin>3.1.1</plugins.maven-install-plugin>
 		<plugins.maven-jar-plugin>3.3.0</plugins.maven-jar-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
+		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
 		<plugins.versions-maven-plugin>2.16.2</plugins.versions-maven-plugin>
 		<!-- dependency versions -->
