@@ -75,11 +75,11 @@
 								<artifactId>findsecbugs-plugin</artifactId>
 								<version>${version.com.h3xstream.findsecbugs.findsecbugs-plugin}</version>
 							</plugin>
-							<!--							<plugin>-->
-							<!--								<groupId>com.mebigfatguy.fb-contrib</groupId>-->
-							<!--								<artifactId>fb-contrib</artifactId>-->
-							<!--								<version>7.4.6</version>-->
-							<!--							</plugin>-->
+							<plugin>
+								<groupId>com.mebigfatguy.sb-contrib</groupId>
+								<artifactId>sb-contrib</artifactId>
+								<version>${version.com.mebigfatguy.sb-contrib.sb-contrib}</version>
+							</plugin>
 							<plugin>
 								<groupId>jp.skypencil.findbugs.slf4j</groupId>
 								<artifactId>bug-pattern</artifactId>
@@ -890,6 +890,7 @@
 		<!-- dependency versions -->
 		<version.com.github.spotbugs>3.1.12</version.com.github.spotbugs>
 		<version.com.h3xstream.findsecbugs.findsecbugs-plugin>1.12.0</version.com.h3xstream.findsecbugs.findsecbugs-plugin>
+		<version.com.mebigfatguy.sb-contrib.sb-contrib>7.4.6</version.com.mebigfatguy.sb-contrib.sb-contrib>
 		<version.com.puppycrawl.tools.checkstyle>10.13.0</version.com.puppycrawl.tools.checkstyle>
 		<version.jp.skypencil.findbugs.slf4j.bug-pattern>1.5.0</version.jp.skypencil.findbugs.slf4j.bug-pattern>
 		<version.org.apache.commons.lang3>[3,3.999.999)</version.org.apache.commons.lang3>
