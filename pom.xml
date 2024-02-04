@@ -293,7 +293,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-toolchains-plugin</artifactId>
-					<version>3.0.0</version>
+					<version>${plugins.maven-toolchains-plugin}</version>
 					<configuration>
 						<toolchains>
 							<jdk>
@@ -918,6 +918,7 @@
 		<plugins.maven-site-plugin>3.8.2</plugins.maven-site-plugin>
 		<plugins.maven-source-plugin>3.2.0</plugins.maven-source-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
+		<plugins.maven-toolchains-plugin>3.0.0</plugins.maven-toolchains-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
 		<plugins.versions-maven-plugin>2.16.2</plugins.versions-maven-plugin>
