@@ -253,7 +253,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-pmd-plugin</artifactId>
-					<version>3.12.0</version>
+					<version>${plugins.maven-pmd-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -788,7 +788,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>3.6</version>
+				<version>${plugins.maven-pmd-plugin}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -900,6 +900,7 @@
 		<plugins.maven-jdeps-plugin>3.1.2</plugins.maven-jdeps-plugin>
 		<plugins.maven-jxr-plugin>2.5</plugins.maven-jxr-plugin>
 		<plugins.maven-linkcheck-plugin>1.2</plugins.maven-linkcheck-plugin>
+		<plugins.maven-pmd-plugin>3.12.0</plugins.maven-pmd-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
