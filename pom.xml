@@ -243,7 +243,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jxr-plugin</artifactId>
-					<version>2.5</version>
+					<version>${plugins.maven-jxr-plugin}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -778,7 +778,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jxr-plugin</artifactId>
-				<version>2.5</version>
+				<version>${plugins.maven-jxr-plugin}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -898,6 +898,7 @@
 		<plugins.maven-jar-plugin>3.3.0</plugins.maven-jar-plugin>
 		<plugins.maven-javadoc-plugin>3.1.1</plugins.maven-javadoc-plugin>
 		<plugins.maven-jdeps-plugin>3.1.2</plugins.maven-jdeps-plugin>
+		<plugins.maven-jxr-plugin>2.5</plugins.maven-jxr-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
