@@ -801,7 +801,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.9</version>
+				<version>${plugins.maven-project-info-reports-plugin}</version>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -901,6 +901,7 @@
 		<plugins.maven-jxr-plugin>2.5</plugins.maven-jxr-plugin>
 		<plugins.maven-linkcheck-plugin>1.2</plugins.maven-linkcheck-plugin>
 		<plugins.maven-pmd-plugin>3.12.0</plugins.maven-pmd-plugin>
+		<plugins.maven-project-info-reports-plugin>3.5.0</plugins.maven-project-info-reports-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
