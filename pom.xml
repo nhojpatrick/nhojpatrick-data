@@ -272,6 +272,11 @@
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-scm-plugin</artifactId>
+					<version>${plugins.maven-scm-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
 					<version>${plugins.maven-site-plugin}</version>
 				</plugin>
@@ -382,7 +387,7 @@
 				<plugin>
 					<groupId>org.sonatype.plugins</groupId>
 					<artifactId>nexus-staging-maven-plugin</artifactId>
-					<version>1.6.8</version>
+					<version>${plugins.nexus-staging-maven-plugin}</version>
 				</plugin>
 			</plugins>
 		</pluginManagement>
@@ -917,11 +922,13 @@
 		<plugins.maven-remote-resources-plugin>3.1.0</plugins.maven-remote-resources-plugin>
 		<plugins.maven-repository-plugin>2.4</plugins.maven-repository-plugin>
 		<plugins.maven-resources-plugin>3.1.0</plugins.maven-resources-plugin>
+		<plugins.maven-scm-plugin>2.0.1</plugins.maven-scm-plugin>
 		<plugins.maven-site-plugin>3.8.2</plugins.maven-site-plugin>
 		<plugins.maven-source-plugin>3.2.0</plugins.maven-source-plugin>
 		<plugins.maven-surefire-plugin>3.2.5</plugins.maven-surefire-plugin>
 		<plugins.maven-toolchains-plugin>3.0.0</plugins.maven-toolchains-plugin>
 		<plugins.maven-wrapper-plugin>3.2.0</plugins.maven-wrapper-plugin>
+		<plugins.nexus-staging-maven-plugin>1.6.8</plugins.nexus-staging-maven-plugin>
 		<plugins.spotbugs-maven-plugin>3.1.12.2</plugins.spotbugs-maven-plugin>
 		<plugins.versions-maven-plugin>2.16.2</plugins.versions-maven-plugin>
 		<!-- dependency versions -->
