@@ -53,6 +53,27 @@
 		<pluginManagement>
 			<plugins>
 				<plugin>
+					<groupId>com.amashchenko.maven.plugin</groupId>
+					<artifactId>gitflow-maven-plugin</artifactId>
+					<version>${plugins.gitflow-maven-plugin}</version>
+					<configuration>
+						<argLine>-Pcicd,deployableArtifacts</argLine>
+						<postReleaseGoals>deploy</postReleaseGoals>
+						<gitFlowConfig>
+							<developmentBranch>develop</developmentBranch>
+							<productionBranch>main</productionBranch>
+							<versionTagPrefix>v</versionTagPrefix>
+						</gitFlowConfig>
+						<gpgSignCommit>true</gpgSignCommit>
+						<gpgSignTag>true</gpgSignTag>
+						<commitMessagePrefix xml:space="preserve">[gitflow] </commitMessagePrefix>
+						<commitMessages>
+							<releaseFinishMessage>Development v@{version}</releaseFinishMessage>
+							<releaseStartMessage>Release v@{version}</releaseStartMessage>
+						</commitMessages>
+					</configuration>
+				</plugin>
+				<plugin>
 					<groupId>com.github.ekryd.sortpom</groupId>
 					<artifactId>sortpom-maven-plugin</artifactId>
 					<version>${plugins.ekryd-sortpom-maven-plugin}</version>
@@ -182,6 +203,10 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
 					<version>${plugins.maven-gpg-plugin}</version>
+					<configuration>
+						<keyname>${gpg.keyname}</keyname>
+						<passphraseServerId>${gpg.keyname}</passphraseServerId>
+					</configuration>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -461,6 +486,55 @@
 			</properties>
 		</profile>
 		<profile>
+			<id>deployableArtifacts</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-jar-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-empty-javadoc-jar</id>
+								<phase>package</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<classifier>javadoc</classifier>
+									<classesDirectory>${basedir}/src/main/javadoc</classesDirectory>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>attach-source</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+		<profile>
 			<id>java11</id>
 			<activation>
 				<jdk>[11,)</jdk>
@@ -646,44 +720,8 @@
 		<profile>
 			<id>release</id>
 			<build>
+				<defaultGoal>gitflow:release</defaultGoal>
 				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-javadoc-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-javadoc</id>
-								<goals>
-									<goal>jar</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-source-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>attach-source</id>
-								<goals>
-									<goal>jar-no-fork</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
 					<plugin>
 						<groupId>org.sonatype.plugins</groupId>
 						<artifactId>nexus-staging-maven-plugin</artifactId>
@@ -927,6 +965,7 @@
 		<plugins.coveralls-maven-plugin>4.3.0</plugins.coveralls-maven-plugin>
 		<plugins.cyclonedx-maven-plugin>2.9.1</plugins.cyclonedx-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
+		<plugins.gitflow-maven-plugin>1.21.0</plugins.gitflow-maven-plugin>
 		<plugins.jacoco-maven-plugin>0.8.12</plugins.jacoco-maven-plugin>
 		<plugins.maven-checkstyle-plugin>3.6.0</plugins.maven-checkstyle-plugin>
 		<plugins.maven-clean-plugin>3.4.0</plugins.maven-clean-plugin>
