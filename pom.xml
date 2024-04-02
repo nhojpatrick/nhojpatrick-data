@@ -901,7 +901,7 @@
 		<plugins.build-helper-maven-plugin>3.0.0</plugins.build-helper-maven-plugin>
 		<plugins.coveralls-maven-plugin>4.3.0</plugins.coveralls-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
-		<plugins.jacoco-maven-plugin>0.8.11</plugins.jacoco-maven-plugin>
+		<plugins.jacoco-maven-plugin>0.8.12</plugins.jacoco-maven-plugin>
 		<plugins.maven-checkstyle-plugin>3.3.1</plugins.maven-checkstyle-plugin>
 		<plugins.maven-clean-plugin>3.3.2</plugins.maven-clean-plugin>
 		<plugins.maven-compiler-plugin>3.13.0</plugins.maven-compiler-plugin>
