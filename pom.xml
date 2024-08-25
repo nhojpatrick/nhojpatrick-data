@@ -907,7 +907,7 @@
 		<plugins.maven-jdeps-plugin>3.1.2</plugins.maven-jdeps-plugin>
 		<plugins.maven-jxr-plugin>2.5</plugins.maven-jxr-plugin>
 		<plugins.maven-linkcheck-plugin>1.2</plugins.maven-linkcheck-plugin>
-		<plugins.maven-pmd-plugin>3.21.2</plugins.maven-pmd-plugin>
+		<plugins.maven-pmd-plugin>3.22.0</plugins.maven-pmd-plugin>
 		<plugins.maven-remote-resources-plugin>3.2.0</plugins.maven-remote-resources-plugin>
 		<plugins.maven-repository-plugin>2.4</plugins.maven-repository-plugin>
 		<plugins.maven-resources-plugin>3.3.1</plugins.maven-resources-plugin>
