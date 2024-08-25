@@ -888,7 +888,7 @@
 		<project.build.sourceEncoding>${project.custom.encoding}</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>${project.custom.encoding}</project.reporting.outputEncoding>
 		<!-- plugin versions -->
-		<plugins.build-helper-maven-plugin>3.1.0</plugins.build-helper-maven-plugin>
+		<plugins.build-helper-maven-plugin>3.2.0</plugins.build-helper-maven-plugin>
 		<plugins.coveralls-maven-plugin>4.3.0</plugins.coveralls-maven-plugin>
 		<plugins.ekryd-sortpom-maven-plugin>3.0.1</plugins.ekryd-sortpom-maven-plugin>
 		<plugins.jacoco-maven-plugin>0.8.12</plugins.jacoco-maven-plugin>
