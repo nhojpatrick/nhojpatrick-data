@@ -939,7 +939,7 @@
 		<plugins.maven-help-plugin>3.5.1</plugins.maven-help-plugin>
 		<plugins.maven-install-plugin>3.1.3</plugins.maven-install-plugin>
 		<plugins.maven-jar-plugin>3.4.2</plugins.maven-jar-plugin>
-		<plugins.maven-javadoc-plugin>3.11.1</plugins.maven-javadoc-plugin>
+		<plugins.maven-javadoc-plugin>3.11.2</plugins.maven-javadoc-plugin>
 		<plugins.maven-jdeps-plugin>3.1.2</plugins.maven-jdeps-plugin>
 		<plugins.maven-linkcheck-plugin>1.2</plugins.maven-linkcheck-plugin>
 		<plugins.maven-pmd-plugin>3.26.0</plugins.maven-pmd-plugin>
