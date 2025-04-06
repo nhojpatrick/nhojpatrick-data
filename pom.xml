@@ -1005,7 +1005,7 @@
 		<version.org.hamcrest>3.0</version.org.hamcrest>
 		<version.org.junit>5.13.2</version.org.junit>
 		<version.org.slf4j>2.0.17</version.org.slf4j>
-		<version.org.testng>7.0.0</version.org.testng>
+		<version.org.testng>7.11.0</version.org.testng>
 		<!-- qa user properties -->
 		<checkstyle.maxAllowedViolations>0</checkstyle.maxAllowedViolations>
 		<jacoco.bundle.class.missedcount>999</jacoco.bundle.class.missedcount>
